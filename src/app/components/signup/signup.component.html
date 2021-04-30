@@ -1,0 +1,88 @@
+<!-- <div class="auth-wrapper">
+    <form class="form-signin" [formGroup]="signupForm" (ngSubmit)="registerUser()">
+        <h3 class="h3 mb-3 font-weight-normal text-center">Please sign up</h3>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Enter name" required>
+        </div>
+        <div class="form-group">
+            <label>Email address</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="Enter email" required>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-block btn-primary">Sign up</button>
+    </form>
+</div> -->
+<div class="row">
+    <div class="col-6 m-auto">
+        <div class="card m-auto">
+            <div class="card-header">
+                Register
+            </div>
+            <div class="card-body">
+                <form [formGroup]="registerationForm" (ngSubmit)='registerUser()'>
+                    <div class="form-group col-12">
+                        <label for="name" class="form-label">Firstname</label>
+                        <input type="text" class="form-control" formControlName="FirstName">
+                        <span *ngIf="!FirstName.value && (FirstName.touched||userSubmitted)" class="error-block">
+                please provide name
+            </span>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="name" class="form-label">LastName</label>
+                        <input type="text" class="form-control" formControlName="LastName">
+                        <span *ngIf="!LastName.value && (LastName.touched||userSubmitted)" class="error-block">
+              please provide name
+          </span>
+                    </div>
+
+                    <div class="form-group col-12">
+                        <label for="Email" class="form-label">Email</label>
+                        <input type="text" class="form-control" formControlName="Email">
+                        <span *ngIf="!Email.value && (Email.touched||userSubmitted)" class="error-block">
+          <span *ngIf="Email.hasError('required')">
+              please provide Email id
+          </span>
+
+                        <span *ngIf="Email.hasError('Email')">
+              please provide valid Email id
+          </span>
+                        </span>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="name" class="form-label">UserName</label>
+                        <input type="text" class="form-control" formControlName="UserName">
+                        <span *ngIf="!UserName.value && (UserName.touched||userSubmitted)" class="error-block">
+              please provide name
+          </span>
+                    </div>
+
+                    <div class="form-group col-12">
+                        <label for="passwrod" class="form-label">Password</label>
+                        <input type="password" class="form-control" formControlName="Password">
+                        <span *ngIf="!Password.value && (Password.touched||userSubmitted)" class="error-block">
+          <!-- <span *ngIf="Password.errors['required']">
+              please provideMoteDePasse
+          </span>
+
+                        <span *ngIf="Password.errors.minlength">
+            MoteDePasse should not be lesser than 8 character
+          </span> -->
+                        </span>
+
+                    </div>
+
+                    <div class="form-group col-12">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="reset" class="btn btn-secondary ml-2">Cancel</button>
+                    </div>
+                    Form Values : {{registerationForm.value |json}} <br> Form Status : {{registerationForm.valid}}
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
