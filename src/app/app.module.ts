@@ -9,6 +9,7 @@ import { AuthConfigInterceptor } from './Helpers/auth-config.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SigninComponent } from './components/signin/signin.component';
 import { ProfileUserComponent } from './components/profile-user/profile-user.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ProfileUserComponent } from './components/profile-user/profile-user.com
     AppComponent,
     SignupComponent,
     SigninComponent,
-    ProfileUserComponent
+    ProfileUserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
